@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+
+# Build Application
+go build -gcflags="all=-N -l" -o /build/application
+
+# Run debugger
+pkill -f dlv || true # kill dlv to be sure
+dlv --continue --listen=:2345 --headless=true --api-version=2 --accept-multiclient exec /build/application
