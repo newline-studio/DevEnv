@@ -13,4 +13,4 @@ WORKDIR /app
 ADD ./src /app
 
 ENTRYPOINT ["nodemon", "-L", "-e", "go,html", "--exec"]
-CMD bash /build/entrypoint && exit 1
+CMD bash /build/entrypoint || exit 1

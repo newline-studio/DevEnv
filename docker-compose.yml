@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  test_go:
+    build:
+      context: ./go
+      dockerfile: Dockerfile
+    volumes:
+      - ./go/src:/app:re

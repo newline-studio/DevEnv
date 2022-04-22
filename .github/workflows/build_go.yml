@@ -32,7 +32,7 @@ jobs:
       - name: "Tag and Push Images"
         run: |
           IMAGE_ID=ghcr.io/${{ github.repository }}-$IMAGE_NAME
-          docker tag app_image $IMAGE_ID:latest
           docker tag app_image $IMAGE_ID:$VERSION_NUMBER
-          docker push $IMAGE_ID:latest
+          docker tag app_image $IMAGE_ID:latest
           docker push $IMAGE_ID:$VERSION_NUMBER
+          docker push $IMAGE_ID:latest
